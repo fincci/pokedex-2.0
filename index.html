@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="src/css/variables.css">
+    <link rel="stylesheet" href="src/css/global.css">
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/card.css">
+    <link rel="stylesheet" href="src/css/listing.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap">
+    <link rel="icon" href="src/imagens/pokeball.png">
+    <title>Pokedex - Fincci</title>
+</head>
+
+<body>
+    <main>
+        <div class="pokedex">
+            <div class="cards-pokemon">
+
+                <div class="card-pokemon" id="card-pokemon">
+                    <div class="card-topo">
+                        <div class="detalhes">
+                            <h2 class="nome" id="name">Pikachu</h2>
+                            <span class="pokeID" id="pokeID">#025</span>
+                        </div>
+                        <div id="type">
+                            <span class="type">Electric</span>
+                        </div>
+                        <div class="card-imagem">
+                            <img id="card-img" src="src/imagens/pikachu.png" alt="Imagem do pikachu">
+                        </div>
+                    </div>
+
+                    <div class="card-info">
+                        <div class="stats">
+                            <h3>Stats</h3>
+                            <ul>
+                                <li>HP: 35</li>
+                                <li>Attack: 55</li>
+                                <li>Defence: 40</li>
+                                <li>Special Attack: 50</li>
+                                <li>Special Defence: 50</li>
+                                <li>Speed: 90</li>
+                                <li>Total: 320</li>
+                            </ul>
+                        </div>
+                        <div class="habilidades">
+                            <h3>Habilidades</h3>
+                            <ul>
+                                <li>Thunder Shock</li>
+                                <li>Nuzzle</li>
+                                <li>Electro Ball</li>
+                                <li>Spark</li>
+                                <li>Discharge</li>
+                                <li>Thunderbolt</li>
+                                <li>Thunder</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <nav class="listagem">
+                <ul>
+                    <li class="pokemon type-eletric" id="pikachu">
+                        <img src="src/imagens/cabeca-pikachu.png" alt="cabeça do pikachu">
+                        <span>Pikachu</span>
+                    </li>
+                    <li class="pokemon type-grama-venenoso" id="bulbasaur">
+                        <img src="src/imagens/cabeca-bulbasaur.png" alt="cabeça do bulbasaur">
+                        <span>Bulbasaur</span>
+                    </li>
+                    <li class="pokemon type-fogo" id="charmander">
+                        <img src="src/imagens/cabeca-charmander.png" alt="cabeça do charmander">
+                        <span>Charmander</span>
+                    </li>
+                    <li class="pokemon type-agua" id="squirtle">
+                        <img src="src/imagens/cabeca-squirtle.png" alt="cabeça do squirtle">
+                        <span>Squirtle</span>
+                    </li>
+                    <li class="pokemon type-inseto" id="caterpie">
+                        <img src="src/imagens/cabeca-caterpie.png" alt="cabeça do caterpi">
+                        <span>Caterpie</span>
+                    </li>
+                    <li class="pokemon type-normal-voador" id="pidgey">
+                        <img src="src/imagens/cabeca-pidgey.png" alt="cabeça do pidgey">
+                        <span>Pidgey</span>
+                    </li>
+                    <li class="pokemon type-normal" id="rattata">
+                        <img src="src/imagens/cabeca-rattata.png" alt="cabeça do rattata">
+                        <span>Rattata</span>
+                    </li>
+                    <li class="pokemon type-fada" id="clefairy">
+                        <img src="src/imagens/cabeca-clefairy.png" alt="cabeça do clefairy">
+                        <span>Clefairy</span>
+                    </li>
+                    <li class="pokemon type-venenoso-voador" id="zubat">
+                        <img src="src/imagens/cabeca-zubat.png" alt="cabeça do zubat">
+                        <span>Zubat</span>
+                    </li>
+                    <li class="pokemon type-agua-voador" id="gyarados">
+                        <img src="src/imagens/cabeca-gyarados.png" alt="cabeça do gyarados">
+                        <span>Gyarados</span>
+                    </li>
+                    <li class="pokemon type-fantasma-venenoso" id="gengar">
+                        <img src="src/imagens/cabeca-gengar.png" alt="cabeça do gengar">
+                        <span>Gengar</span>
+                    </li>
+                    <li class="pokemon type-dragao-voador" id="dragonite">
+                        <img src="src/imagens/cabeca-dragonite.png" alt="cabeça do dragonite">
+                        <span>Dragonite</span>
+                    </li>
+                    <li class="pokemon type-psiquico" id="mew">
+                        <img src="src/imagens/cabeca-mew.png" alt="cabeça do mew">
+                        <span>Mew</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+    <audio class="soundMouseOver" src="src/sound/mouseover.mp3" preload="auto"></audio>
+    <audio class="soundClick" src="src/sound/click.mp3" preload="auto"></audio>
+
+    <script src="src/js/index.js"></script>
+
+</body>
+
+</html>

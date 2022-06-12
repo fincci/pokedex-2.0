@@ -1,0 +1,190 @@
+
+.listagem {
+    max-width: 210px;
+    max-height: 790px;
+    overflow: auto;
+    padding: 10px;
+}
+
+.listagem .pokemon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: #6b727a;
+    color: white;
+    padding: 0 5px;
+    cursor: pointer;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    min-height: 60px;
+    transition: 0.15s ease-in-out;
+}
+
+.listagem .pokemon:hover {
+    transform: scale(1.1);
+}
+
+.listagem .pokemon:active {
+    transform: scale(0.9);
+}
+
+.listagem::-webkit-scrollbar {
+    width: 10px;
+}
+
+.listagem::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 10px;
+}
+
+.listagem::-webkit-scrollbar-thumb:hover {
+    background-color: grey;
+}
+
+.listagem .pokemon img {
+    width: 25%;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.listagem .pokemon span {
+    padding-right: 20px;
+    user-select: none;
+}
+
+.listagem .pokemon.active.type-eletric {
+    background-color: var(--eletric);
+}
+
+.listagem .pokemon.active.type-grama {
+    background-color: #49d0b0;
+}
+
+.listagem .pokemon.active.type-fogo {
+    background-color: #f08030;
+}
+
+.listagem .pokemon.active.type-agua {
+    background-color: #76befe;
+}
+
+.listagem .pokemon.active.type-inseto {
+    background-color: #8aee71;
+}
+
+.listagem .pokemon.active.type-normal {
+    background-color: #a8a878;
+}
+
+.listagem .pokemon.active.type-fantasma {
+    background-color: #705898;
+}
+
+.listagem .pokemon.active.type-dragao {
+    background-color: #7038f8;
+}
+
+.listagem .pokemon.active.type-fada {
+    background-color: #ee99ac;
+}
+
+.listagem .pokemon.active.type-venenoso {
+    background-color: #a040a0;
+}
+
+.listagem .pokemon.active.type-psiquico {
+    background-color: #f85888;
+}
+
+.listagem .pokemon.active.type-grama-venenoso, .listagem .pokemon.active.type-venenoso-grama {
+    background-image: linear-gradient(90deg, #49d0b0, #a040a0);
+}
+
+.listagem .pokemon.active.type-normal-voador, .listagem .pokemon.active.type-voador-normal    {
+    background-image: linear-gradient(90deg, #a8a878, #a890f0);
+}
+
+.listagem .pokemon.active.type-venenoso-voador, .listagem .pokemon.active.type-voador-venenoso    {
+    background-image: linear-gradient(90deg, #a040a0, #a890f0);
+}
+
+.listagem .pokemon.active.type-agua-voador, .listagem .pokemon.active.type-voador-agua {
+    background-image: linear-gradient(90deg, #76befe, #a890f0);
+}
+
+.listagem .pokemon.active.type-fantasma-venenoso, .listagem .pokemon.active.type-venenoso-fantasma {
+    background-image: linear-gradient(90deg, #705898, #a040a0);
+}
+
+.listagem .pokemon.active.type-dragao-voador, .listagem .pokemon.active.type-voador-dragao {
+    background-image: linear-gradient(90deg, #7038f8, #a890f0);
+}
+
+.listagem .pokemon.disabled.type-eletric:hover {
+    background-color: #f8d030;
+}
+
+.listagem .pokemon.disabled.type-grama:hover {
+    background-color: #49d0b0;
+}
+
+.listagem .pokemon.disabled.type-fogo:hover {
+    background-color: #f08030;
+}
+
+.listagem .pokemon.disabled.type-agua:hover {
+    background-color: #76befe;
+}
+
+.listagem .pokemon.disabled.type-inseto:hover {
+    background-color: #8aee71;
+}
+
+.listagem .pokemon.disabled.type-normal:hover {
+    background-color: #a8a878;
+}
+
+.listagem .pokemon.disabled.type-fantasma:hover {
+    background-color: #705898;
+}
+
+.listagem .pokemon.disabled.type-dragao:hover {
+    background-color: #7038f8;
+}
+
+.listagem .pokemon.disabled.type-fada:hover {
+    background-color: #ee99ac;
+}
+
+.listagem .pokemon.disabled.type-venenoso:hover {
+    background-color: #a040a0;
+}
+
+.listagem .pokemon.disabled.type-psiquico:hover {
+    background-color: #f85888;
+}
+
+.listagem .pokemon.disabled.type-grama-venenoso:hover, .listagem .pokemon.disabled.type-venenoso-grama:hover {
+    background-image: linear-gradient(90deg, #49d0b0, #a040a0);
+}
+
+.listagem .pokemon.disabled.type-normal-voador:hover, .listagem .pokemon.disabled.type-voador-normal:hover  {
+    background-image: linear-gradient(90deg, #a8a878, #a890f0);
+}
+
+.listagem .pokemon.disabled.type-venenoso-voador:hover, .listagem .pokemon.disabled.type-voador-venenoso:hover  {
+    background-image: linear-gradient(90deg, #a040a0, #a890f0);
+}
+
+.listagem .pokemon.disabled.type-agua-voador:hover, .listagem .pokemon.disabled.type-voador-agua:hover {
+    background-image: linear-gradient(90deg, #76befe, #a890f0);
+}
+
+.listagem .pokemon.disabled.type-fantasma-venenoso:hover, .listagem .pokemon.disabled.type-venenoso-fantasma:hover {
+    background-image: linear-gradient(90deg, #705898, #a040a0);
+}
+
+.listagem .pokemon.disabled.type-dragao-voador:hover, .listagem .pokemon.disabled.type-voador-dragao:hover {
+    background-image: linear-gradient(90deg, #7038f8, #a890f0);
+}
