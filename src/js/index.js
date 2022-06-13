@@ -225,7 +225,6 @@ function pokemonListCreator() {
         })
         .then((data) => {
             allPokemons = data.results
-            console.log(allPokemons);
             const selectorList = document.getElementById('list')
             for (let i = 0; i < allPokemons.length; i++) {
                 let pokemonName = allPokemons[i].name;
