@@ -66,16 +66,18 @@
     border-bottom: 1px solid #6B727A;
 }
 
-.card-pokemon .card-info .stats, .card-pokemon .card-info .habilidades {
+.card-pokemon .card-info .statsWrap, .card-pokemon .card-info .abilitiesWrap {
     padding: 0 10px;
     width: 180px;
 }
 
-.card-pokemon .card-info .habilidades ul li, .card-pokemon .card-info .stats ul li {
+.card-pokemon .card-info .abilitiesWrap ul li, .card-pokemon .card-info .statsWrap ul li {
     border-bottom: 1px solid #c3c4c5;
     padding: 0 0 5px;
     margin-bottom: 5px;
     font-size: 15px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .card-pokemon.type-eletric {
