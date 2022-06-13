@@ -44,7 +44,7 @@ function selectPokemon() {
 
                     function changeType() {
                         const typePlace = document.getElementById('type')
-                        let rawTypes = data.types
+                        const rawTypes = data.types
                         let types = []
                         let spanLength = document.querySelectorAll('.type').length
                         if (spanLength !== types.length) {
@@ -65,7 +65,7 @@ function selectPokemon() {
 
                     function changeBg() {
                         const cardBg = document.getElementById('card-pokemon')
-                        let rawTypes = data.types
+                        const rawTypes = data.types
                         let types = []
                         for (let i = 0; i < rawTypes.length; i++) {
                             let typesValue = rawTypes[i].type.name;
@@ -74,14 +74,14 @@ function selectPokemon() {
                         if (types.length === 1) {
                             let colorBg = `var(--${types})`
                             cardBg.style.background = colorBg
-                        } else {                            
+                        } else {
                             let colorBg = `linear-gradient(90deg, var(--${types[0]}), var(--${types[1]}))`
                             cardBg.style.backgroundImage = colorBg
                         }
                     }
 
                     function changeStatus() {
-                        let statsApi = data.stats
+                        const statsApi = data.stats
                         const statsPlace = document.querySelectorAll('.rawStats')
                         statsPlace.forEach(statsP => {
                             let statsID = statsP.id
@@ -93,15 +93,15 @@ function selectPokemon() {
                     }
 
                     function changeSkills() {
-                        let skillsApi = data.abilities
-                        skillsPlace = document.querySelectorAll('.skills')
-                        skillsPlace.forEach(skillsP => {
-                            let skillsID = skillsP.id
-                            let i = skillsID.substring(5)
-                            let skill = skillsApi[i].ability.name
-                            skillsP.innerHTML = `${skill[0].toUpperCase()}${skill.substring(1).replace('-', ' ')}`
-                            console.log(skill);
-                        })
+                        const skillsApi = data.abilities
+                        const skillsUl = document.querySelector('.skills')
+                        if (skillsApi.length !== skillsUl.length) {
+                            skillsUl.innerHTML = ''
+                        }
+                        for (let i = 0; i < skillsApi.length; i++) {
+                            let skill = skillsApi[i].ability.name;
+                            skillsUl.innerHTML += `<li class="skill">${skill[0].toUpperCase()}${skill.substring(1).replace('-', ' ')}</li>`
+                        }
                     }
                 })
                 .catch((err) => {
