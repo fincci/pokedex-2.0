@@ -18,13 +18,14 @@ function selectPokemon() {
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data);
+                    // console.log(data);
                     changeName();
                     changeID();
                     changeType();
                     changeImg();
                     changeBg();
                     changeStatus();
+                    changeSkills();
 
                     function changeName() {
                         const name = document.getElementById('name')
@@ -80,7 +81,27 @@ function selectPokemon() {
                     }
 
                     function changeStatus() {
-                        
+                        let statsApi = data.stats
+                        const statsPlace = document.querySelectorAll('.rawStats')
+                        statsPlace.forEach(statsP => {
+                            let statsID = statsP.id
+                            let i = statsID.substring(5)
+                            let statsName = statsApi[i].stat.name
+                            let statsValue = statsApi[i].base_stat
+                            statsP.innerHTML = `${statsName[0].toUpperCase()}${statsName.substring(1).replace('-', ' ')}: ${statsValue}`
+                        })
+                    }
+
+                    function changeSkills() {
+                        let skillsApi = data.abilities
+                        skillsPlace = document.querySelectorAll('.skills')
+                        skillsPlace.forEach(skillsP => {
+                            let skillsID = skillsP.id
+                            let i = skillsID.substring(5)
+                            let skill = skillsApi[i].ability.name
+                            skillsP.innerHTML = `${skill[0].toUpperCase()}${skill.substring(1).replace('-', ' ')}`
+                            console.log(skill);
+                        })
                     }
                 })
                 .catch((err) => {
