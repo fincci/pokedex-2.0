@@ -18,15 +18,15 @@
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     min-height: 60px;
-    transition: 0.15s ease-in-out;
+    transition: 0.05s ease-in-out;
 }
 
 .listagem .pokemon:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .listagem .pokemon:active {
-    transform: scale(0.9);
+    transform: scale(0.95);
 }
 
 .listagem::-webkit-scrollbar {
