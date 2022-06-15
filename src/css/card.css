@@ -42,7 +42,6 @@
 .card-pokemon img {
     max-height: 100%;
     max-width: 100%;
-    animation: appear 0.5s;
 }
 
 @keyframes appear {
@@ -78,4 +77,8 @@
     font-size: 15px;
     display: flex;
     justify-content: space-between;
+}
+
+.imgTransition {
+    animation: appear 0.5s;
 }
