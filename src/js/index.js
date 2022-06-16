@@ -2,7 +2,7 @@ firstPokemonCard();
 pokemonListCreator();
 
 async function pokemonListCreator() {
-  let url = `https://pokeapi.co/api/v2/pokemon?limit=4`;
+  let url = `https://pokeapi.co/api/v2/pokemon?limit=50`;
   const response = await fetch(url);
   const json = await response.json();
   await createPokemonList(json.results);
@@ -30,11 +30,7 @@ async function createPokemonList(pokemons) {
   }
   const pokemonList = document.querySelectorAll('.pokemon')
   pokemonList[0].classList.add('selected')
-  console.log(pokemons);
-}
-
-function firstPokemonSelected() {
-  console.log();
+  pokemonList[0].style.background = 'linear-gradient(90deg, var(--grass), var(--poison))'
 }
 
 async function createPokemonListElement(data, pokemonName) {
@@ -52,11 +48,11 @@ async function firstPokemonCard() {
   const response = await fetch(url)
   const data = await response.json()
 
+  changeImg();
+  changeBg();
   changeName();
   changeID();
   changeType();
-  changeImg();
-  changeBg();
   changeStatus();
   changeSkills();
 
@@ -153,12 +149,12 @@ async function changePokemon(idPokemon, pokemon) {
 
   changeImg();
   changeBg();
+  changeSelectedBg(pokemon);
   changeName();
   changeID();
   changeType();
   changeStatus();
   changeSkills();
-  pokemonSelected(pokemon);
 
   function changeName() {
     const name = document.getElementById("name");
@@ -216,25 +212,25 @@ async function changePokemon(idPokemon, pokemon) {
     }
   }
 
-  function pokemonSelected(pokemon) {
+  function changeSelectedBg(pokemon) {
     let selectedBefore = document.querySelector('.selected')
     selectedBefore.classList.remove('selected')
     selectedBefore.style.background = 'white'
     pokemon.classList.add('selected')
     let selectedAfter = document.querySelector('.selected')
     const rawTypesBg = data.types;
-      let typesBg = [];
-      for (let i = 0; i < rawTypesBg.length; i++) {
-        let typesValueBg = rawTypesBg[i].type.name;
-        typesBg.push(typesValueBg);
-      }
-      if (typesBg.length === 1) {
-        let colorBg = `var(--${typesBg})`;
-        selectedAfter.style.background = colorBg;
-      } else {
-        let colorBg = `linear-gradient(90deg, var(--${typesBg[0]}), var(--${typesBg[1]}))`;
-        selectedAfter.style.backgroundImage = colorBg;
-      }
+    let typesBg = [];
+    for (let i = 0; i < rawTypesBg.length; i++) {
+      let typesValueBg = rawTypesBg[i].type.name;
+      typesBg.push(typesValueBg);
+    }
+    if (typesBg.length === 1) {
+      let colorBg = `var(--${typesBg})`;
+      selectedAfter.style.background = colorBg;
+    } else {
+      let colorBg = `linear-gradient(90deg, var(--${typesBg[0]}), var(--${typesBg[1]}))`;
+      selectedAfter.style.backgroundImage = colorBg;
+    }
   }
 
   function changeStatus() {
