@@ -1,5 +1,6 @@
 .card-pokemon {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
     animation: cardappear 0.1s;
 }
@@ -21,10 +22,11 @@
 .card-pokemon .type {
     font-size: 12px;
     background-color: white;
-    opacity: 0.7;
+    opacity: .7;
     border-radius: 10px;
     padding: 2px 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-right: 5px;
 }
 
