@@ -2,7 +2,7 @@ firstPokemonCard();
 pokemonListCreator();
 
 async function pokemonListCreator() {
-  let url = `https://pokeapi.co/api/v2/pokemon?limit=6`;
+  let url = `https://pokeapi.co/api/v2/pokemon?limit=50`;
   const response = await fetch(url);
   const json = await response.json();
   await createPokemonList(json.results);
