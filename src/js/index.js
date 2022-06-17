@@ -2,7 +2,7 @@ firstPokemonCard();
 pokemonListCreator();
 
 async function pokemonListCreator() {
-  let url = `https://pokeapi.co/api/v2/pokemon?limit=50`;
+  let url = `https://pokeapi.co/api/v2/pokemon?limit=6`;
   const response = await fetch(url);
   const json = await response.json();
   await createPokemonList(json.results);
@@ -29,7 +29,9 @@ function addPokemonClickEvent() {
       }
     })
     pokemon.addEventListener('mouseleave', () => {
-      pokemon.style.background = 'white'
+      if (!pokemon.classList.contains('selected')) {
+        pokemon.style.background = 'white'
+      }
     })
   });
 }
