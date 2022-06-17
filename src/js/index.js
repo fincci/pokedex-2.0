@@ -13,9 +13,24 @@ function addPokemonClickEvent() {
   const pokemons = document.querySelectorAll("#list .pokemon");
   mouseSounds(pokemons);
   pokemons.forEach((pokemon) => {
-    pokemon.addEventListener("click", async () => {
+    pokemon.addEventListener('click', async () => {
       await changePokemon(pokemon.id, pokemon);
     });
+    pokemon.addEventListener('mouseenter', () => {
+      let dataType = pokemon.getAttribute('data-type')
+      if (!dataType.includes('undefined')) {
+        let types = dataType.split(',')
+        let colorBg = `linear-gradient(90deg, var(--${types[0]}), var(--${types[1]}))`;
+        pokemon.style.background = colorBg
+      } else {
+        let types = dataType.split(',')
+        let colorBg = `var(--${types[0]})`;
+        pokemon.style.background = colorBg
+      }
+    })
+    pokemon.addEventListener('mouseleave', () => {
+      pokemon.style.background = 'white'
+    })
   });
 }
 
@@ -36,8 +51,13 @@ async function createPokemonList(pokemons) {
 async function createPokemonListElement(data, pokemonName) {
   let selectorList = document.getElementById("list");
   let pokeImg = data.sprites.other.home.front_default;
+  let types = []
+  for (let i = 0; i < data.types.length; i++) {
+    let typesValue = data.types[i].type.name;
+    types.push(typesValue);
+  }
   selectorList.innerHTML +=
-    `<li class="pokemon" id="${pokemonName}">
+    `<li class="pokemon" id="${pokemonName}" data-type="${types[0]},${types[1]}">
                 <img src="${pokeImg}" alt="Imagem do ${pokemonName}">
                 <span>${pokemonName[0].toUpperCase()}${pokemonName.substring(1).replace("-", " ")}</span>
     </li>`;
@@ -272,7 +292,6 @@ function mouseSounds(pokemons) {
       audioMouseOver.volume = 0.1;
       audioMouseOver.play();
     });
-
     pokemon.addEventListener("click", () => {
       audioClick.volume = 0.1;
       audioClick.play();
