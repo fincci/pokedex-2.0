@@ -284,16 +284,18 @@ async function changePokemon(idPokemon, pokemon) {
 }
 
 function mouseSounds(pokemons) {
-  const audioMouseOver = document.getElementsByClassName("soundMouseOver")[0];
-  const audioClick = document.getElementsByClassName("soundClick")[0];
+  const audioMouseOver = document.getElementById("soundMouseOver");
+  const audioClick = document.getElementById("soundClick");
 
   pokemons.forEach((pokemon) => {
     pokemon.addEventListener("mouseenter", () => {
-      audioMouseOver.volume = 0.1;
+      audioMouseOver.currentTime = 0;
+      audioMouseOver.volume = 0.05;
       audioMouseOver.play();
     });
     pokemon.addEventListener("click", () => {
-      audioClick.volume = 0.1;
+      audioClick.currentTime = 0;
+      audioClick.volume = 0.05;
       audioClick.play();
     });
   });
