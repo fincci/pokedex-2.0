@@ -2,7 +2,7 @@ firstPokemonCard();
 pokemonListCreator();
 
 async function pokemonListCreator() {
-  let url = `https://pokeapi.co/api/v2/pokemon?limit=50`;
+  let url = `https://pokeapi.co/api/v2/pokemon?limit=6`;
   const response = await fetch(url);
   const json = await response.json();
   await createPokemonList(json.results);
@@ -177,6 +177,15 @@ async function changePokemon(idPokemon, pokemon) {
   changeType();
   changeStatus();
   changeSkills();
+  cardAni();
+
+  function cardAni() {
+    const card = document.getElementById('card-pokemon')
+    card.classList.add('ani')
+    setTimeout(() => {
+      card.classList.remove('ani')
+    }, 100);
+  }
 
   function changeName() {
     const name = document.getElementById("name");
@@ -213,8 +222,12 @@ async function changePokemon(idPokemon, pokemon) {
 
   function changeImg() {
     const imgPlace = document.getElementById("card-img");
+    imgPlace.classList.add('imgTransition')
     let imgPokemon = data.sprites.other.home.front_default;
     imgPlace.src = imgPokemon;
+    setTimeout(() => {
+      imgPlace.classList.remove('imgTransition')
+    }, 200);
   }
 
   function changeBg() {
