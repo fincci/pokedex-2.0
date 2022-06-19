@@ -182,9 +182,9 @@ async function changePokemon(idPokemon, pokemon) {
   function cardAni() {
     const card = document.getElementById('card-pokemon')
     card.classList.add('ani')
-    setTimeout(() => {
+    card.addEventListener('animationend', () => {
       card.classList.remove('ani')
-    }, 100);
+    })
   }
 
   function changeName() {
@@ -225,9 +225,9 @@ async function changePokemon(idPokemon, pokemon) {
     imgPlace.classList.add('imgTransition')
     let imgPokemon = data.sprites.other.home.front_default;
     imgPlace.src = imgPokemon;
-    setTimeout(() => {
+    imgPlace.addEventListener('animationend', () => {
       imgPlace.classList.remove('imgTransition')
-    }, 200);
+    })
   }
 
   function changeBg() {
