@@ -4,6 +4,7 @@
     max-height: 790px;
     overflow: auto;
     padding: 10px;
+    filter: drop-shadow(rgba(0, 0, 0, 0.35) 5px 5px 5px);
 }
 
 .listagem .pokemon {
