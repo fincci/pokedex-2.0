@@ -157,9 +157,9 @@ async function firstPokemonCard() {
     }
     for (let i = 0; i < skillsApi.length; i++) {
       let skill = skillsApi[i].ability.name;
-      skillsUl.innerHTML += `<li class="skill">${skill[0].toUpperCase()}${skill
+      skillsUl.innerHTML += `<li class="skill"><p>${skill[0].toUpperCase()}${skill
         .substring(1)
-        .replace("-", " ")}</li>`;
+        .replace("-", " ")}</p></li>`;
     }
   }
 }
@@ -291,9 +291,9 @@ async function changePokemon(idPokemon, pokemon) {
     }
     for (let i = 0; i < skillsApi.length; i++) {
       let skill = skillsApi[i].ability.name;
-      skillsUl.innerHTML += `<li class="skill">${skill[0].toUpperCase()}${skill
+      skillsUl.innerHTML += `<li class="skill"><p>${skill[0].toUpperCase()}${skill
         .substring(1)
-        .replace("-", " ")}</li>`;
+        .replace("-", " ")}</p></li>`;
     }
   }
 }
